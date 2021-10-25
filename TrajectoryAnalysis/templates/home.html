@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飓风轨迹数据分析平台</title>
+    <style>
+        #box{
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            display: flex;
+            flex-direction: column;
+        }
+        #title{
+            flex:1;
+            justify-content: center;
+        }
+        #content{
+            flex:10;
+            display: flex;
+            
+            
+        }
+        #left-content{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;
+            
+        }
+        #right-content{
+            flex:4;
+        }
+        .item{
+            margin: 10% 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="title"><h1 style="text-align: center;">飓风轨迹数据分析</h1></div>
+        <div id="content">
+            <div id="left-content">
+                <div class="item"><a>首页</a></div>
+                <div class="item"><a>数据存取</a></div>
+                <div class="item"><a>数据预处理</a></div>
+                <div class="item"><a>数据分析</a></div>
+            </div>
+            <div id="right-content">content</div>
+        </div>
+    </div>
+    
+</body>
+</html>
