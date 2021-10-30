@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飓风轨迹数据分析平台</title>
+    <link rel="stylesheet" href='{{url_for("static", filename="main.css")}}' type="text/css">
+</head>
+<body>
+    <div class="root">
+        <div class="top"><h1 style="text-align: center;">飓风轨迹数据分析</h1></div>
+        <div class="body">
+            <div class="navigation-bar">
+                <div class="navigation-item text-center"><a href="/">首页</a></div>
+                <div class="navigation-item text-center"><a href="{{ url_for('dataStorage') }}">数据存取</a></div>
+                <div class="navigation-item text-center"><a href="{{ url_for('dataPreprocess') }}">数据预处理</a></div>
+                <div class="navigation-item text-center"><a href="{{ url_for('dataAnalysis') }}">数据分析</a></div>
+            </div>
+            <div class="content">{%block content%}{%endblock%}</div>
+        </div>
+    </div>
+    
+</body>
+</html>

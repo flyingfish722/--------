@@ -1,0 +1,19 @@
+{%extends "root.html"%}
+{%block content%}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <div>
+                {{form.dataList.label}}
+                {{form.dataList}}
+            </div>
+            <div>
+                {{form.algorithm.label}}
+                {{form.algorithm}}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn") }}
+        </div>
+    </form>
+{%endblock%}

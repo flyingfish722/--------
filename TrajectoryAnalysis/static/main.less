@@ -1,0 +1,36 @@
+.root {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+
+    .top{
+        flex:1;
+        justify-content: center;
+        text-align: center;
+    }
+    .body {
+        flex:10;
+        display: flex; 
+
+        .navigation-bar {
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items: center;  
+            .navigation-item {
+                margin: 10% 0;
+            }
+        }
+        .content{
+            flex:4;
+        }
+    }
+}
+.text-center {
+    text-align: center;
+}
+
+

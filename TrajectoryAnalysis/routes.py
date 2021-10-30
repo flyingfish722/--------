@@ -1,16 +1,35 @@
-import os
-import secrets
-from PIL import Image
-from flask import render_template, url_for, flash, redirect, request, Response, abort
-from flaskblog.forms import *
-from flaskblog.models import User, Post
-from flaskblog import app, db, bcrypt, mail
-from flask_login import login_user, logout_user, current_user, login_required
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask_mail import Message
+from inspect import Parameter
+from TrajectoryAnalysis import app
+from flask import render_template, url_for, redirect
+from TrajectoryAnalysis.forms import ParameterForm, DataAnalysisForm
 
 @app.route('/home/')
 @app.route('/')
-@login_required
 def home():
     return render_template('home.html')
+
+@app.route('/dataanalysis/', methods=['GET', 'POST'])
+def dataAnalysis():
+    form = DataAnalysisForm()
+    form.dataList.choices = ['traj1', 'traj2']
+    form.algorithm.choices = ['PM-CFSFDP', 'DBSCAN']
+    if form.validate_on_submit():
+        return redirect(url_for('setParameter'))
+    return render_template('dataanalysis.html', form=form)
+
+@app.route('/parameter/', methods=['GET', 'POST'])
+def setParameter():
+    form = ParameterForm()
+    if form.validate_on_submit():
+        #进行聚类
+        pic = 0
+        return render_template('result.html', pic=pic)
+    return render_template('dataanalysis.html', form=form)
+
+@app.route('/datastorage/')
+def dataStorage():
+    return render_template('datastorage.html')
+
+@app.route('/datapreprocess/')
+def dataPreprocess():
+    return render_template('datapreprocess.html')
